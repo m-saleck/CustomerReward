@@ -15,7 +15,7 @@ table 50102 "Customer Rewards Mgt Setup"
         {
             Caption = 'Customer Rewards Ext. Mgt. Codeunit ID';
             DataClassification = CustomerContent;
-            //TableRelation = "CodeUnit Metadata".ID;
+            TableRelation = "CodeUnit Metadata".ID;
         }
     }
 
