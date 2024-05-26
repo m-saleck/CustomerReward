@@ -91,8 +91,10 @@ codeunit 50101 "Customer Rewards Ext Mgt"
 
             if (JsonRepsonse.SelectToken('ActivationResponse', Result)) then
                 if (Result.AsValue().AsText() = 'Success') then begin
+
                     if (ActivationCodeInfo.FindFirst()) then
                         ActivationCodeInfo.Delete();
+
                     ActivationCodeInfo.Init();
                     ActivationCodeInfo.ActivationCode := ActivationCode;
                     ActivationCodeInfo."Date Activated" := Today;
