@@ -1,7 +1,8 @@
-table 50101 "Activation Code Information"
+table 50100 "Activation Code Information"
 {
     Caption = 'Activation Code Information';
     DataClassification = SystemMetadata;
+
     fields
     {
         field(1; ActivationCode; Text[14])

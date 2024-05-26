@@ -34,7 +34,7 @@ codeunit 50101 "Customer Rewards Ext Mgt"
     // Determines the corresponding reward level and returns it 
     procedure GetRewardLevel(RewardPoints: Integer) RewardLevelTxt: Text;
     var
-        RewardLevel: Record "Reward Level";
+        RewardLevel: Record "Reward Level Table";
         MinRewardLevelPoints: Integer;
     begin
         RewardLevelTxt := NoRewardlevelTxt;
@@ -91,8 +91,10 @@ codeunit 50101 "Customer Rewards Ext Mgt"
 
             if (JsonRepsonse.SelectToken('ActivationResponse', Result)) then
                 if (Result.AsValue().AsText() = 'Success') then begin
+
                     if (ActivationCodeInfo.FindFirst()) then
                         ActivationCodeInfo.Delete();
+
                     ActivationCodeInfo.Init();
                     ActivationCodeInfo.ActivationCode := ActivationCode;
                     ActivationCodeInfo."Date Activated" := Today;
@@ -131,7 +133,7 @@ codeunit 50101 "Customer Rewards Ext Mgt"
     // Checks if the current codeunit is allowed to handle Customer Rewards Activation requests rather than a mock. 
     local procedure CanHandle(): Boolean;
     var
-        CustomerRewardsMgtSetup: Record "Customer Rewards Mgt Setup";
+        CustomerRewardsMgtSetup: Record "CustomerRewardsMgtSetup";
     begin
         if CustomerRewardsMgtSetup.Get() then
             exit(CustomerRewardsMgtSetup."Cust. Rew. Ext. Mgt. Cod. ID" = CODEUNIT::"Customer Rewards Ext Mgt");

@@ -37,7 +37,7 @@ codeunit 50100 "Customer Rewards Installation"
 
     procedure SetDefaultCustomerRewardsExtMgtCodeunit();
     var
-        CustomerRewardsMgtSetup: Record "Customer Rewards Mgt Setup";
+        CustomerRewardsMgtSetup: Record "CustomerRewardsMgtSetup";
     begin
         CustomerRewardsMgtSetup.DeleteAll();
         CustomerRewardsMgtSetup.Init();
@@ -48,7 +48,7 @@ codeunit 50100 "Customer Rewards Installation"
 
     procedure InsertDefaultRewardLevels()
     var
-        RewardLevels: Record "Reward Level";
+        RewardLevels: Record "Reward Level Table";
     begin
         Clear(RewardLevels);
         if not RewardLevels.IsEmpty then
@@ -62,7 +62,7 @@ codeunit 50100 "Customer Rewards Installation"
 
     local procedure InsertRewardLevel(Level: Text[20]; Points: integer)
     var
-        RewardLevel: Record "Reward Level";
+        RewardLevel: Record "Reward Level Table";
     begin
         Clear(RewardLevel);
         RewardLevel.Level := Level;

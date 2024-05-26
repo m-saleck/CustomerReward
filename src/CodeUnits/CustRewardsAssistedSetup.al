@@ -1,4 +1,6 @@
 codeunit 50102 "Cust Rewards Assisted Setup"
+// This codeunit sets up an assisted setup guide for the "Customer Rewards" feature in Business Central.
+//It registers the setup guide with the Guided Experience Code unit and provides necessary translations
 {
     trigger OnRun()
     begin

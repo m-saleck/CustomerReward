@@ -1,4 +1,4 @@
-table 50100 "Reward Level"
+table 50102 "Reward Level Table"
 {
     Caption = 'Reward Level';
     TableType = Normal;
@@ -10,8 +10,8 @@ table 50100 "Reward Level"
         {
             Caption = 'Level';
             DataClassification = CustomerContent;
-        }
 
+        }
         field(2; "Minimum Reward Points"; Integer)
         {
             Caption = 'Minimum Reward Points';
@@ -21,11 +21,11 @@ table 50100 "Reward Level"
 
             trigger OnValidate();
             var
-                RewardLevel: Record "Reward Level";
-                tempPoints: Integer;
+                RewardLevel: Record "Reward Level Table";
+                Temppoint: Integer;
             begin
-                tempPoints := "Minimum Reward Points";
-                RewardLevel.SetRange("Minimum Reward Points", tempPoints);
+                Temppoint := "Minimum Reward Points";
+                RewardLevel.SetRange("Minimum Reward Points", Temppoint);
                 if not RewardLevel.IsEmpty() then
                     Error('Minimum Reward Points must be unique');
             end;
@@ -41,14 +41,14 @@ table 50100 "Reward Level"
         key("Minimum Reward Points"; "Minimum Reward Points") { }
     }
 
-    trigger OnInsert();
-    begin
-
-        Validate("Minimum Reward Points");
-    end;
-
-    trigger OnModify();
+    trigger OnInsert()
     begin
         Validate("Minimum Reward Points");
     end;
+
+    trigger OnModify()
+    begin
+        Validate("Minimum Reward Points");
+    end;
+
 }

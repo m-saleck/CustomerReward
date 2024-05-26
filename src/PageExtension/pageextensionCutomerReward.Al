@@ -1,4 +1,4 @@
-pageextension 50100 "Customer Card" extends "Customer Card"
+pageextension 50101 "pgextCutomerReward" extends "Customer Card"
 {
     layout
     {
