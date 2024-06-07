@@ -6,7 +6,7 @@
             "request": "launch",
             "type": "al",
             "environmentType": "Sandbox",
-            "environmentName": "MS_Sandbox",
+            "environmentName": "MMS_Sandbox",
             "tenant": "26c07848-75e6-459e-95a4-68008a0efbbd",
             "startupObjectId": 22,
             "startupObjectType": "Page",
@@ -21,7 +21,7 @@
             "request": "launch",
             "type": "al",
             "environmentType": "Sandbox",
-            "environmentName": "MS_Sandbox",
+            "environmentName": "MMS_Sandbox",
             "tenant": "26c07848-75e6-459e-95a4-68008a0efbbd"
         }
     ]
